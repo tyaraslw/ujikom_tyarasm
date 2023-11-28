@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-scroll shadow-0" style="background-color: #ffede7;">
   <div class="container">
+    <img class="image" src="image/logo.png"  width="42px" style="margin: 1px;padding: 0px ">
     <a class="navbar-brand"href="{{url('home')}}">Kasir</a>
     <button class="navbar-toggler ps-0" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
       aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,13 +14,13 @@
           <a class="nav-link px-3" href="{{url('produk')}}">barang</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link px-3" href="#!">pembelian</a>
+          <a class="nav-link px-3" href="{{url('')}}">pembelian</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link px-3" href="#!">stok</a>
+          <a class="nav-link px-3" href="{{url('')}}">stok</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link px-3" href="{{url('login')}}">login</a>
+          <a class="nav-link px-3" href="{{url('loginkasir')}}">login</a>
         </li>
 
         <div class="d-flex">

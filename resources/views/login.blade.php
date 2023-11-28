@@ -17,7 +17,7 @@
         <div class="col-lg-6 mb-5 mb-lg-0">
           <h1 class="my-5 display-3 fw-bold ls-tight">
             Kasir<br/>
-            <span class="my-5 display-3 fw-bold ls-tight">Admin</span>
+            <span class="text-primary">Supermarket</span>
           </h1>
         </div>
 

@@ -10,9 +10,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get("/loginkasir", [LoginControll::class, 'login'])->name("login");
+Route::post("/loginkasir", [LoginControll::class, 'proseslogin']);
 
 // Route::get('/home', function () {
 //     return 'Halaman Home';
