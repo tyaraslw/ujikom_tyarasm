@@ -10,18 +10,25 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarExample01">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item active">
-          <a class="nav-link px-3" href="{{url('produk')}}">barang</a>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="{{url('produk')}}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Produk
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{url('')}}">Tambah produk</a></li>
+            <li><a class="dropdown-item" href="{{url('')}}">Update produk</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link px-3" href="{{url('')}}">pembelian</a>
+          <a class="nav-link px-3" href="{{url('')}}">Penjualan</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link px-3" href="{{url('')}}">stok</a>
+          <a class="nav-link px-3" href="{{url('pelanggan')}}">Pelanggan</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link px-3" href="{{url('loginkasir')}}">login</a>
-        </li>
+        </li> -->
 
         <div class="d-flex">
           <a class="nav-link" href="{{url('logout')}}">

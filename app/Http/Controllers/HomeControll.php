@@ -27,4 +27,28 @@ class HomeControll extends Controller
 
         return view('produk', ['TextIsi' => $data, 'produk' => $produk]);  
     }
+    function hapus($id)
+    {
+        $deleted=DB::table('pengaduan')->where('id_pengaduan', $id)->delete();
+        if($deleted){
+            return redirect()->back();
+        }
+    }
+
+    function detail_pengaduan($id)
+    {
+        $data = DB::table('kasir')
+            ->where('ProdukID', '=', $id)
+            ->first();
+
+        $produk = DB::where('ProdukID', $id)->first();
+        // $tanggapan = Tanggapan::where('id_pengaduan', $id)->get();
+        // $tanggapan = DB::table('tanggapan')
+        //     ->join('petugas', 'petugas.id', '=', 'tanggapan.id_petugas')
+        //     ->where('tanggapan.id_pengaduan', $id)
+        //     ->get();
+        // return $tanggapan;
+        
+        return view("detailP", ["data" => $produk]);
+    }
 }

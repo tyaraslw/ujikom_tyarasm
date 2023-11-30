@@ -18,23 +18,21 @@
         <div class="container">
           <table class="table"> 
             <tr>
-              <th scope="col">ProdukID</th>
-              <th scope="col">NamaProduk</th>
-              <th scope="col">Harga</th>
-              <th scope="col">Stok</th>
+              <th scope="col">Nama</th>
+              <th scope="col">Alamat</th>
+              <th scope="col">No telp</th>
               <th scope="col">opsi</th>
             </tr>
 
-              @foreach ($produk as $produk)
+              @foreach ($pelanggan as $pelanggan)
             <tr>
-              <td>{{$produk->ProdukID}}</td>  
-              <td>{{$produk->NamaProduk}}</td>  
-              <td>{{$produk->Harga}} </td>
-              <td>{{$produk->Stok}} </td>
+              <td>{{$pelanggan->NamaPelanggan}}</td>  
+              <td>{{$pelanggan->Alamat}} </td>
+              <td>{{$pelanggan->NomorTelepon}} </td>
             <td>
-            <a href="hapusProduk/{{$produk->ProdukID}}">Delete</a>|
-            <a href="detailProduk/{{$produk->ProdukID}}">Detail</a>|
-            <a href="update/{{$produk->ProdukID}}">Update</a>        
+            <a href="hapus-pelanggan/{{$pelanggan->PelangganID}}">Delete</a>|
+            <a href="detail-pelanggan/{{$pelanggan->PelangganID}}">Detail</a>|
+            <a href="update/{{$pelanggan->PelangganID}}">Update</a>        
             </form>
           </td>
       </tbody>
