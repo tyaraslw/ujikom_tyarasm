@@ -1,5 +1,7 @@
 .background{
-  color: #ffede7;}
+  color: #ffede7;
+ 
+}
 
 .navbar-brand {
     letter-spacing: 3px;
@@ -23,3 +25,4 @@
 .navbar-scrolled {
   background-color: #ffede7;
 }
+

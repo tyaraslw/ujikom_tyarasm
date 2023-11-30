@@ -7,8 +7,15 @@
     <link rel="stylesheet" href="css/home.css">
     <title>home</title>
 </head>
+<style>
+    body{
+        background-color: rgb(255, 216, 203); 
+    };
+
+</style>
 <body>
 @include('layouts.nav') 
+    <br>
     <br>
     <br>
     <br>

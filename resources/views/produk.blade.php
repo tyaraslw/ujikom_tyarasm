@@ -13,6 +13,7 @@
     <br>
     <br>
     <br>
+    <br>
       <h3 style="text-align:center;">{{$TextIsi}}</h3>
       <br>
         <div class="container">
