@@ -20,13 +20,39 @@ class HomeControll extends Controller
     function produk()
     {
 
-        $data = "Data barang";
+        $data = "Data Produk";
         $produk = DB::table('produk')->get();
  
         // $produk = Produk::where('nik', Auth::user()->nik)->get();
 
         return view('produk', ['TextIsi' => $data, 'produk' => $produk]);  
     }
+
+    function tampil_produk()
+    {
+
+        $isi = "Tambah Produk";
+
+        return view('tambahproduk', ['isi' => $isi]);
+    }
+
+    function proses_tambah_produk(Request $request)
+    {
+
+        // return Auth::user();
+
+        // $isi_pengaduan = $_POST['isi_laporan'];
+        $isi_produk = $request->isi_laporan;
+
+        DB::table('produk')->insert([
+            'ProdukID' =>Auth::user()->ID,
+            'Nama_Produk' => Auth::user()->nik,
+            'Harga' => $isi_produk,
+            'Stok' => '0'
+        ]);
+        return redirect('/produk');
+    }
+
     function hapus($id)
     {
         $deleted=DB::table('pengaduan')->where('id_pengaduan', $id)->delete();

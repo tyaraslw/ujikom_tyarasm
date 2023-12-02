@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
 <nav class="navbar navbar-expand-lg fixed-top navbar-scroll shadow-0" style="background-color: #ffede7;   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.50)">
 <div class="container-fluid">
             <a class="navbar-brand" href="#">
@@ -25,8 +17,8 @@
             Produk
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="{{url('produk')}}">Tambah produk</a></li>
-            <li><a class="dropdown-item" href="{{url('')}}">Update produk</a></li>
+            <li><a class="dropdown-item" href="{{url('produk')}}">Data Produk</a></li>
+            <li><a class="dropdown-item" href="{{url('tambah_produk')}}">Tambah produk</a></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
@@ -51,6 +43,3 @@
     </form> -->
     </div>
 </nav>
- 
-</body>
-</html>

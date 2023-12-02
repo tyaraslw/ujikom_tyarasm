@@ -17,25 +17,22 @@
       <h3 style="text-align:center;">{{$TextIsi}}</h3>
       <br>
         <div class="container">
-          <table class="table"> 
+          <table class="table" > 
             <tr>
-              <th scope="col">ProdukID</th>
-              <th scope="col">NamaProduk</th>
-              <th scope="col">Harga</th>
-              <th scope="col">Stok</th>
-              <th scope="col">opsi</th>
+              <th scope="col" class="table-danger">Nama_Produk</th>
+              <th scope="col" class="table-danger">Harga</th>
+              <th scope="col" class="table-danger">Stok</th>
+              <th scope="col" class="table-danger">opsi</th>
             </tr>
 
               @foreach ($produk as $produk)
             <tr>
-              <td>{{$produk->ProdukID}}</td>  
               <td>{{$produk->NamaProduk}}</td>  
               <td>{{$produk->Harga}} </td>
               <td>{{$produk->Stok}} </td>
             <td>
-            <a href="hapusProduk/{{$produk->ProdukID}}">Delete</a>|
-            <a href="detailProduk/{{$produk->ProdukID}}">Detail</a>|
-            <a href="update/{{$produk->ProdukID}}">Update</a>        
+            <a type="button" class="btn btn-danger" href="hapusProduk/{{$produk->ProdukID}}">Delete</a>
+            <!-- <a href="update/{{$produk->ProdukID}}">Update</a>-->
             </form>
           </td>
       </tbody>
@@ -43,5 +40,6 @@
          @endforeach
           </table>
        </div> 
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
