@@ -21,7 +21,7 @@
             <li><a class="dropdown-item" href="{{url('tambah_produk')}}">Tambah produk</a></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
-        </li>
+        </li>  
         <li class="nav-item">
           <a class="nav-link px-3" href="{{url('')}}">Penjualan</a>
         </li>

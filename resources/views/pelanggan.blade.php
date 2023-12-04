@@ -9,19 +9,21 @@
   <title>produk</title>
 </head>
 <body>
+<div class="d-grid gap-2 col-6 mx-auto">
+  <br><br><br><br>
+  <a class="btn btn-outline-secondary" type="button" href="tambah-pelanggan">Tambah Pelanggan</a>
+</div>
   @include('layouts.nav') 
-    <br>
-    <br>
-    <br>
+    <br><br>
       <h3 style="text-align:center;">{{$TextIsi}}</h3>
       <br>
         <div class="container">
           <table class="table"> 
             <tr>
-              <th scope="col">Nama</th>
-              <th scope="col">Alamat</th>
-              <th scope="col">No telp</th>
-              <th scope="col">opsi</th>
+              <th scope="col" class="table-danger">Nama</th>
+              <th scope="col" class="table-danger">Alamat</th>
+              <th scope="col" class="table-danger">No telp</th>
+              <th scope="col" class="table-danger">opsi</th>
             </tr>
 
               @foreach ($pelanggan as $pelanggan)
@@ -30,9 +32,8 @@
               <td>{{$pelanggan->Alamat}} </td>
               <td>{{$pelanggan->NomorTelepon}} </td>
             <td>
-            <a href="hapus-pelanggan/{{$pelanggan->PelangganID}}">Delete</a>|
-            <a href="detail-pelanggan/{{$pelanggan->PelangganID}}">Detail</a>|
-            <a href="update/{{$pelanggan->PelangganID}}">Update</a>        
+            <a type="button" class="btn btn-outline-danger" href="hapusPelanggan/{{$pelanggan->PelangganID}}">Delete</a>
+            <a type="button" class="btn btn-outline-info" href="updatePelanggan/{{$pelanggan->PelangganID}}">Update</a>     
             </form>
           </td>
       </tbody>
@@ -40,5 +41,6 @@
          @endforeach
           </table>
        </div> 
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,33 +1,58 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\pelanggan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\Produk;
+use App\Models\User;
 
 class pelangganControll extends Controller
 {
-    function proses_tambah_masyarakat(Request $request)
+    function pelanggan()
     {
 
-        //validasi
-        $request->validate([
-            'isi_daftar' => 'required|min:2'
-        ]);
+        $data = "Data Pelanggan";
+        $pelanggan = DB::table('pelanggan')->get();
+ 
+        // $produk = Produk::where('nik', Auth::user()->nik)->get();
 
+        return view('pelanggan', ['TextIsi' => $data, 'pelanggan' => $pelanggan]);  
+    }
 
-        // $isi_masyarakat = $_POST['isi_laporan'];
-        $isi_masyarakat = $request->isi_daftar;
-        $isi_username = $request->isi_user;
-        $isi_password = $request->isi_pass;
-        $isi_telp = $request->isi_no;
+    function hapus($id)
+    {
+        $deleted=DB::table('pelanggan')->where('PelangganID', $id)->delete();
+        if($deleted){
+            return redirect()->back();
+        }
+    }
 
-        DB::table('pelanggan')->insert([
-            'nik' => '08',
-            'nama' => $isi_masyarakat,
-            'username' => $isi_username,
-            'password' => $isi_password,
-            'telp' => $isi_telp,
-        ]);
-        return redirect('/masyarakat');
+    function update($id)
+    {
+        $pelanggan = DB::table('pelanggan')->where('pelangganID' , $id)->first();
+        return view('updatepelanggan' , ['pelanggan' => $pelanggan]);
+    }
+
+    function proses_update_pelanggan(Request $request, $id)
+    {
+        $isi_pelanggan = $request->isi_pelanggan;
+
+        return $isi_pelanggan;
+
+        // DB::table('pelanggan')
+        // ->where('pelangganID', $id)
+        // ->update(['isi_pelanggan' => $isi_pelanggan]);
+        
+        // return redirect('/pelanggan');
+    }
+
+    function tambahpel()
+    {
+
+        $isi = "Tambah Pelanggan";
+
+        return view('/tambahpelanggan', ['isi' => $isi]);
     }
 }
