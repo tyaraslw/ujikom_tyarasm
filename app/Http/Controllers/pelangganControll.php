@@ -29,30 +29,51 @@ class pelangganControll extends Controller
         }
     }
 
+    //updatepelanggan
     function update($id)
     {
-        $pelanggan = DB::table('pelanggan')->where('pelangganID' , $id)->first();
+        $pelanggan = DB::table('pelanggan')->where('PelangganID' , $id)->first();
+
+        // return $pelanggan;
         return view('updatepelanggan' , ['pelanggan' => $pelanggan]);
     }
-
     function proses_update_pelanggan(Request $request, $id)
     {
-        $isi_pelanggan = $request->isi_pelanggan;
+        $nama = $request->nama;
+        $alamat = $request->alamat;
+        $telp = $request->telp;
 
-        return $isi_pelanggan;
+        // return [$isinama, $isiharga, $isistok];
 
-        // DB::table('pelanggan')
-        // ->where('pelangganID', $id)
-        // ->update(['isi_pelanggan' => $isi_pelanggan]);
+        DB::table('pelanggan')
+        ->where('PelangganID', $id)
+        ->update(['Nama' => $nama, 'Alamat' => $alamat, 'No Telp' => $telp]);
         
-        // return redirect('/pelanggan');
+        return redirect('/pelanggan');
     }
 
+
+    //tambahpelanggan
     function tambahpel()
     {
-
         $isi = "Tambah Pelanggan";
 
         return view('/tambahpelanggan', ['isi' => $isi]);
+    }
+    function proses_tambahpel(Request $request)
+    {
+        $tambahnama = $request->nama;
+        $tambahalamat = $request->alamat;
+        $tambahtelp = $request->telp;
+        
+        return ([$tambahnama, $tambahalamat, $tambahtelp]);
+
+        // DB::table('pelanggan')->insert([
+        //     'PelangganID' => '0',
+        //     'Nama' => $nama,
+        //     'Alamat' => $alamat,
+        //     'No Telp' => $telp
+        // ]);
+        // return redirect('/pelanggan');
     }
 }

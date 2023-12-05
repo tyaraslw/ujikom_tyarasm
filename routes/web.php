@@ -21,15 +21,14 @@ Route::get('/home', [HomeControll::class, 'index']);
 Route::get('/produk', [HomeControll::class, 'produk']);
 //tambahproduk
 Route::post('/tambah_produk', [HomeControll::class, 'proses_tambah_produk']);
-Route::get('/tambah_produk', [HomeControll::class, 'tampil_produk']);
-
+Route::get('/tambah_produk', [HomeControll::class, 'tambah_produk']);
 //hapus
 Route::get('/hapusProduk/{id}', [HomeControll::class, 'hapus']);
 //detail
 Route::get('/detailProduk/{id}', [HomeControll::class, 'detail_produk']);
 //update
-// Route::post('/update/{id}', [HomeControll::class, 'proses_update_produk']);
-// Route::get('/update/{id}', [HomeControll::class, 'update_produk']);
+Route::post('/updateProduk/{id}', [HomeControll::class, 'proses_update_produk']);
+Route::get('/updateProduk/{id}', [HomeControll::class, 'update_produk']);
 
 //pelanggan
 Route::get('/pelanggan', [pelangganControll::class, 'pelanggan']);

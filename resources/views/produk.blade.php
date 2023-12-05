@@ -32,7 +32,7 @@
               <td>{{$produk->Stok}} </td>
             <td>
             <a type="button" class="btn btn-danger" href="hapusProduk/{{$produk->ProdukID}}">Delete</a>
-            <!-- <a href="update/{{$produk->ProdukID}}">Update</a>-->
+            <a type="button" class="btn btn-info" href="updateProduk/{{$produk->ProdukID}}">Update</a>
             </form>
           </td>
       </tbody>

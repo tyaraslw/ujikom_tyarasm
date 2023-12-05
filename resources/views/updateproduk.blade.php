@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>isi_produk</title>
+    <title>updateproduk</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/home.css">
 </head>
@@ -15,31 +15,27 @@
 </style>
 <body>
 @include('layouts.nav') 
-     <br>
-     <br><br>
-     <br>
-     <br>
-     <h3 style="text-align:center;">{{$isi}}</h3>
-     <br>
-        <form action="tambah_produk" method="POST" enctype="multipart/form-data">
+    <br><br><br>
+    <br>
+    <center>
+    <td><h2>Update Produk here!</h2></td>
+    </center>
+
+    <form action={{url("updateProduk/$produk->ProdukID")}} method="POST" enctype="multipart/form-data">
             <div class="container">
-            <div class="card">
-            <div class="card-body py-5 px-md-8">
-                <div class="row justify-content-center">
-                  <div class="col-md-9">
-                    @method("POST")
+            @method("POST")
                     @csrf 
                     <div class="mb-3">
                          <label for="exampleFormControlText" class="form-label">Nama Produk</label>
-                         <textarea class="form-control" id="exampleFormControlText" name="isinama" required></textarea>
+                         <textarea class="form-control" id="exampleFormControlText" name="isinama" required>{{$produk->NamaProduk}}</textarea>
                     </div>
                     <div class="mb-3">
                          <label for="exampleFormControlText" class="form-label">Harga</label>
-                         <textarea class="form-control" id="exampleFormControlText" name="isiharga" required></textarea>
+                         <textarea class="form-control" id="exampleFormControlText" name="isiharga" required>{{$produk->Harga}}</textarea>
                     </div>
                     <div class="mb-3">
                          <label for="exampleFormControlText" class="form-label">Stok</label>
-                         <textarea class="form-control" id="exampleFormControlText" name="isistok" required></textarea>
+                         <textarea class="form-control" id="exampleFormControlText" name="isistok" required>{{$produk->Stok}}</textarea>
                     </div>
                     <div>
                         <input class="btn btn-primary" type="submit" value="simpan"> 
