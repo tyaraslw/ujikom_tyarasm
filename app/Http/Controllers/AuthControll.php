@@ -15,11 +15,12 @@ class AuthControll extends Controller
         return view('/register');
     }
 
-    function proses_register(Request $request){
-        // var_dump($request->all());
+    function proses_register(Request $request)
+    {
+         // var_dump($request->all());
 
         $data = DB::table("user")->insert([
-            'id_user' => $request->id,
+            'id_user' => $request->id_user,
             'nama' => $request->nama,
             'username' => $request->username,
             'password' => Hash::make($request->password),

@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeControll;
 use App\Http\Controllers\LoginControll;
 use App\Http\Controllers\LogoutControll;
 use App\Http\Controllers\pelangganControll;
+use App\Http\Controllers\penjualanControll;
 
 //login
 Route::get("/login", [LoginControll::class, 'login'])->name("login");
@@ -16,6 +17,7 @@ Route::post("/login", [LoginControll::class, 'proseslogin']);
 Route::get("/register", [AuthControll::class, 'register']);
 Route::post("/register", [AuthControll::class, 'proses_register']);
 
+// Route::middleware(['auth'])->group(function () { 
 //produk
 Route::get('/home', [HomeControll::class, 'index']);
 Route::get('/produk', [HomeControll::class, 'produk']);
@@ -29,14 +31,21 @@ Route::get('/detailProduk/{id}', [HomeControll::class, 'detail_produk']);
 //update
 Route::post('/updateProduk/{id}', [HomeControll::class, 'proses_update_produk']);
 Route::get('/updateProduk/{id}', [HomeControll::class, 'update_produk']);
+// });
 
 //pelanggan
 Route::get('/pelanggan', [pelangganControll::class, 'pelanggan']);
-Route::get('pelanggan/tambah', [pelangganControll::class, 'proses_tambahpel']);
-Route::post('/tambah-pelanggan', [pelangganControll::class, 'tambahpel']);
+Route::post('/pelanggan/tambah', [pelangganControll::class, 'proses_tambahpel']);
+Route::get('/pelanggan/tambah', [pelangganControll::class, 'tambahpel']);
 Route::get('/hapusPelanggan/{id}', [pelangganControll::class, 'hapus']);
 Route::get('/updatePelanggan/{id}', [pelangganControll::class, 'update']);
 Route::post('/updatePelanggan/{id}', [pelangganControll::class, 'proses_update_pelanggan']);
+
+//penjualan
+Route::get('/penjualan', [penjualanControll::class, 'penjualan']);
+ Route::get('penjualan/detailPenjualan/{id}', [penjualanControll::class, 'detailpenjualan']);
+ Route::post('penjualan/detailPenjualan/{id}', [penjualanControll::class, 'proses_detailpenjualan']);
+
 
 //logout
 Route::get("/logout", [LogoutControll::class, 'logout']);

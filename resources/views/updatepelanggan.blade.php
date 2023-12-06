@@ -26,15 +26,15 @@
                 @csrf 
                 <div class="mb-3">
                          <label for="exampleFormControlText" class="form-label">Nama Pelanggan</label>
-                         <input type="text" class="form-control" id="exampleFormControlText" name="nama" required>{{$pelanggan->Nama}}
+                         <textarea type="text" class="form-control" id="exampleFormControlText" name="nama" required>{{$pelanggan->NamaPelanggan}}</textarea>
                     </div>
                     <div class="mb-3">
                          <label for="exampleFormControlText" class="form-label">Alamat</label>
-                         <input type="text" class="form-control" id="exampleFormControlText" name="alamat" required>{{$pelanggan->Alamat}}
+                         <textarea type="text" class="form-control" id="exampleFormControlText" name="alamat" required>{{$pelanggan->Alamat}}</textarea>
                     </div>
                     <div class="mb-3">
                          <label for="exampleFormControlText" class="form-label">No telp</label>
-                         <input type="text" class="form-control" id="exampleFormControlText" name="telp" required>{{$pelanggan->No telp}}
+                         <textarea type="text" class="form-control" id="exampleFormControlText" name="telp" required>{{$pelanggan->NomorTelepon}}</textarea>
                     </div>
                 <input class="btn btn-outline-primary" type="submit"  value="update"> 
         </form> 

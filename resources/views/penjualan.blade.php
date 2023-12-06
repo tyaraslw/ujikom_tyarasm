@@ -6,34 +6,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/home.css">
-  <title>produk</title>
+  <title>penjualan</title>
 </head>
 <body>
 <div class="d-grid gap-2 col-6 mx-auto">
-  <br><br><br><br>
-  <a class="btn btn-outline-secondary" type="button" href="pelanggan/tambah">Tambah Pelanggan</a>
 </div>
   @include('layouts.nav') 
-    <br><br>
+    <br><br><br><br>
       <h3 style="text-align:center;">{{$TextIsi}}</h3>
-      <br>
+      <br><br>
         <div class="container">
           <table class="table"> 
             <tr>
-              <th scope="col" class="table-danger">Nama</th>
-              <th scope="col" class="table-danger">Alamat</th>
-              <th scope="col" class="table-danger">No telp</th>
+              <th scope="col" class="table-danger">Tanggal</th>
+              <th scope="col" class="table-danger">Total</th>
+              <th scope="col" class="table-danger">PelangganID</th>
               <th scope="col" class="table-danger">opsi</th>
             </tr>
 
-              @foreach ($pelanggan as $pelanggan)
+              @foreach ($penjualan as $penjualan)
             <tr>
-              <td>{{$pelanggan->NamaPelanggan}}</td>  
-              <td>{{$pelanggan->Alamat}} </td>
-              <td>{{$pelanggan->NomorTelepon}} </td>
+              <td>{{$penjualan->TanggalPenjualan}} </td>
+              <td>{{$penjualan->TotalHarga}} </td>
+              <td>{{$penjualan->PelangganID}} </td>
             <td>
-            <a type="button" class="btn btn-outline-danger" href="hapusPelanggan/{{$pelanggan->PelangganID}}">Delete</a>
-            <a type="button" class="btn btn-outline-info" href="updatePelanggan/{{$pelanggan->PelangganID}}">Update</a>     
+            <!-- <a type="button" class="btn btn-outline-danger" href="hapusPenjualan/{{$penjualan->PenjualanID}}">Delete</a> -->
+            <a type="button" class="btn btn-outline-primary" href="detailPenjualan/{{$penjualan->PenjualanID}}">Detail</a>     
             </form>
           </td>
       </tbody>

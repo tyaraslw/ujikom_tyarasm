@@ -43,11 +43,11 @@ class pelangganControll extends Controller
         $alamat = $request->alamat;
         $telp = $request->telp;
 
-        // return [$isinama, $isiharga, $isistok];
+        // return [$nama, $alamat, $telp];
 
         DB::table('pelanggan')
         ->where('PelangganID', $id)
-        ->update(['Nama' => $nama, 'Alamat' => $alamat, 'No Telp' => $telp]);
+        ->update(['NamaPelanggan' => $nama, 'Alamat' => $alamat, 'NomorTelepon' => $telp]);
         
         return redirect('/pelanggan');
     }
@@ -66,14 +66,14 @@ class pelangganControll extends Controller
         $tambahalamat = $request->alamat;
         $tambahtelp = $request->telp;
         
-        return ([$tambahnama, $tambahalamat, $tambahtelp]);
+        // return ([$tambahnama, $tambahalamat, $tambahtelp]);
 
-        // DB::table('pelanggan')->insert([
-        //     'PelangganID' => '0',
-        //     'Nama' => $nama,
-        //     'Alamat' => $alamat,
-        //     'No Telp' => $telp
-        // ]);
-        // return redirect('/pelanggan');
+        DB::table('pelanggan')->insert([
+            'PelangganID' => '0',
+            'NamaPelanggan' => $tambahnama,
+            'Alamat' => $tambahalamat,
+            'NomorTelepon' => $tambahtelp
+        ]);
+        return redirect('/pelanggan');
     }
 }

@@ -21,7 +21,7 @@
      <br>
      <h3 style="text-align:center;">{{$isi}}</h3>
      <br>
-        <form action="tambah-pelanggan" method="POST" enctype="multipart/form-data">
+        <form action="tambah" method="POST" enctype="multipart/form-data">
             <div class="container">
             <div class="card">
             <div class="card-body py-5 px-md-8">
@@ -31,15 +31,15 @@
                     @csrf 
                     <div class="mb-3">
                          <label for="exampleFormControlText" class="form-label">Nama Pelanggan</label>
-                         <input type="text" class="form-control" id="exampleFormControlText" name="nama">
+                         <textarea type="text" class="form-control" id="exampleFormControlText" name="nama"></textarea>
                     </div>
                     <div class="mb-3">
                          <label for="exampleFormControlText" class="form-label">Alamat</label>
-                         <input type="text" class="form-control" id="exampleFormControlText" name="alamat">
+                         <textarea type="text" class="form-control" id="exampleFormControlText" name="alamat"></textarea>
                     </div>
                     <div class="mb-3">
                          <label for="exampleFormControlText" class="form-label">No telp</label>
-                         <input type="text" class="form-control" id="exampleFormControlText" name="telp">
+                         <textarea type="text" class="form-control" id="exampleFormControlText" name="telp"></textarea>
                     </div>
                     <div>
                         <input class="btn btn-primary" type="submit" value="simpan"> 
