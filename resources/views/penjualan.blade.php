@@ -19,16 +19,16 @@
           <table class="table"> 
             <tr>
               <th scope="col" class="table-danger">Tanggal</th>
+              <th scope="col" class="table-danger">Nama Pelanggan</th>
               <th scope="col" class="table-danger">Total</th>
-              <th scope="col" class="table-danger">PelangganID</th>
               <th scope="col" class="table-danger">opsi</th>
             </tr>
 
               @foreach ($penjualan as $penjualan)
             <tr>
               <td>{{$penjualan->TanggalPenjualan}} </td>
+              <td>{{$penjualan->NamaPelanggan}} </td>
               <td>{{$penjualan->TotalHarga}} </td>
-              <td>{{$penjualan->PelangganID}} </td>
             <td>
             <!-- <a type="button" class="btn btn-outline-danger" href="hapusPenjualan/{{$penjualan->PenjualanID}}">Delete</a> -->
             <a type="button" class="btn btn-outline-primary" href="detailPenjualan/{{$penjualan->PenjualanID}}">Detail</a>     

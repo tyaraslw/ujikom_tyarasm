@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\Produk;
+use App\Models\User;
 
 class LoginControll extends Controller
 {
@@ -22,9 +23,15 @@ class LoginControll extends Controller
             }
     }
 
-    function logout(){
-        Auth::logout();
+    function user()
+    {
 
-        return redirect('/login');
+        $data = "Data User";
+        $user = DB::table('user')->get();
+ 
+        // $produk = Produk::where('nik', Auth::user()->nik)->get();
+
+        return view('user', ['TextIsi' => $data, 'user' => $user]);  
     }
+
 }

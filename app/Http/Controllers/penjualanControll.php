@@ -14,7 +14,11 @@ class penjualanControll extends Controller
     function penjualan()
     {
         $data = "Data Penjualan";
-        $penjualan = DB::table('penjualan')->get();
+        $penjualan = DB::table('penjualan')
+        ->join('pelanggan', 'penjualan.PelangganID', '=', 'pelanggan.PelangganID')
+        ->get();
+
+        // return $penjualan;
  
         // $produk = Produk::where('nik', Auth::user()->nik)->get();
 

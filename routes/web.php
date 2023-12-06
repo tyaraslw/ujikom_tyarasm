@@ -12,12 +12,7 @@ use App\Http\Controllers\penjualanControll;
 Route::get("/login", [LoginControll::class, 'login'])->name("login");
 Route::post("/login", [LoginControll::class, 'proseslogin']);
 
-
-//register
-Route::get("/register", [AuthControll::class, 'register']);
-Route::post("/register", [AuthControll::class, 'proses_register']);
-
-// Route::middleware(['auth'])->group(function () { 
+Route::middleware(['auth'])->group(function () { 
 //produk
 Route::get('/home', [HomeControll::class, 'index']);
 Route::get('/produk', [HomeControll::class, 'produk']);
@@ -31,7 +26,7 @@ Route::get('/detailProduk/{id}', [HomeControll::class, 'detail_produk']);
 //update
 Route::post('/updateProduk/{id}', [HomeControll::class, 'proses_update_produk']);
 Route::get('/updateProduk/{id}', [HomeControll::class, 'update_produk']);
-// });
+});
 
 //pelanggan
 Route::get('/pelanggan', [pelangganControll::class, 'pelanggan']);
@@ -46,6 +41,11 @@ Route::get('/penjualan', [penjualanControll::class, 'penjualan']);
  Route::get('penjualan/detailPenjualan/{id}', [penjualanControll::class, 'detailpenjualan']);
  Route::post('penjualan/detailPenjualan/{id}', [penjualanControll::class, 'proses_detailpenjualan']);
 
+ //user
+ Route::get('/user', [LoginControll::class, 'user']);
+//registeruser
+Route::get("user/register", [AuthControll::class, 'register']);
+Route::post("user/register", [AuthControll::class, 'proses_register']);
 
 //logout
 Route::get("/logout", [LogoutControll::class, 'logout']);

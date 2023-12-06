@@ -24,9 +24,9 @@ class AuthControll extends Controller
             'nama' => $request->nama,
             'username' => $request->username,
             'password' => Hash::make($request->password),
-            'level' => "admin",
+            'level' => "",
         ]);
-        return redirect('/login');
+        return redirect('/user');
     }
 
 }
